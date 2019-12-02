@@ -11,7 +11,7 @@ class NavBar extends Component {
         return (
             <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
                 {/*               
-                https://www.iconfinder.com/icons/1243689/call_phone_icon
+                https://www.iconfinder.com/icons/1243680/birthday_gadget_gift_present_icon
                 Creative Commons (Attribution 3.0 Unported);
                 https://www.iconfinder.com/Makoto_msk */}
                 <Link to='/'>
@@ -38,7 +38,7 @@ class NavBar extends Component {
 }
 
 const NavWrapper = styled.nav`
-background: var(--mainBlue);
+background: var(--mainRed);
 .nav-link{
     color: var(--mainWhite) !important;
     font-size: 1.3rem;
