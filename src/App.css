@@ -20,7 +20,7 @@ body{
 }
 
 .text-blue{
-  color: var(--mainBlue);
+  color: var(--mainRed);
 }
 
 .text-bright{
@@ -46,3 +46,4 @@ body{
   font-size: 1.2rem;
   color: var(--mainYellow);
 }
+
