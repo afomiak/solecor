@@ -3,16 +3,31 @@ import React, { Component } from 'react';
 class SignUp extends Component {
     render() {
         return (
-            <div className='container'>
-                <div className='row'>
-                    <div className='col-10 mx-auto text-center text-title text-uppercase pt-5'>
-                        <h1 className="display-3">404</h1>
-                        <h1>HAHAH</h1>
-                        <h2>ppifwenajfound</h2>
-                        <h3>the requested URL <span className="text-danger">{this.props.location.pathname}</span> {" "} was not found</h3>
-                    </div>
-                </div>
-            </div>
+            <div class ="container">
+    <div class="row">
+        <div className='col-10 mx-auto text-center text-title text-uppercase pt-5'>
+            <form action="/sign_up" method="post">
+                <h1> Sign Up Form</h1>
+                <input class="box" type="text" name="name" id="name" placeholder="Name" required/>
+                <br></br>
+
+                <input class="box" type="email" name="email" id="email"
+                placeholder="E-mail" required/> <br></br>
+
+                <input class="box" type="text" name="phone" id="phone"
+                placeholder="Phone Number" required/> <br></br>
+                
+                <input class="box" type="password" name="password"
+                id="password" placeholder="Password" required/> 
+                <br></br>
+                <br></br>
+
+                <input type="submit" id = "submitDetails"
+                name="submitDetails" value="Submit"/> <br></br>
+            </form>
+        </div>
+    </div>
+</div>
         );
     }
 }
