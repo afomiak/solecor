@@ -1,7 +1,7 @@
-###                                                            Solecor
+                                                    ### Solecor
 
 
-![Image description](readme.jpg)
+![Image description](/public/img/readme.jpg)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
