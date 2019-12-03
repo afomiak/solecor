@@ -1,32 +1,32 @@
-### Solecor
+#   Solecor
 
 
 ![Image description](/public/img/readme.jpg)
 
 
-## Description 
+#   Description 
 
     Solecor is an eCommerce website where the user can purchase their favorite pair of Jordans. The user can choose from a verity of shoes, when the user clicks on the shoe they can want,they get a full description of that shoe. From there they can place the shoe in the cart and go back to shopping or can go to cart and checkout. In the cart they are able to edit their order and use PayPal for their payment method.
 
-## DEMO
+#   DEMO
 
 
-# REACT APP
+#   REACT APP
     This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Clone
+#   Clone
 
     Go to github repo copy/clone the repo.
     Create own project folder.
     Git clone repo into project folder.
     npm install for the dependencies.
  
-# npm start
+#   npm start
     After you have cloned repo and installed dependencies run npm start
     Runs the app in the development mode.
     Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-# Dependencies: 
+#   Dependencies: 
 *   "bcrypt-nodejs": "0.0.3",
 *   "bootstrap": "^4.4.1",
 *   "fs": "0.0.1-security",
