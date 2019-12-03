@@ -1,48 +1,68 @@
-var mongoose = require("mongoose");
+// New Dependencies
+const jwt = require('jwt-simple');
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt-nodejs');
 
-// Save a reference to the Schema constructor
-var Schema = mongoose.Schema;
+const {Schema} = mongoose;
 
-// Using the Schema constructor, create a new UserSchema object
-// This is similar to a Sequelize model
-var ProductSchema = new Schema({
-  // `title` is required and of type String
-  title: {
-      type: String,
-      required:true
-  },
-  img: {
-      type: String,
-      required: true
-  },
-  price: {
-      type: Integer,
-      required: true
-  },
-  company: {
-      type: String,
-      required: true
-  },
-  info: {
-      type: String,
-      required: true
-  },
-  inCart: {
-      type: String,
-      required: true
-  },
-  count: {
-      type: Integer,
-      required: true
-  },
-  total: {
-      type: Integer,
-      required: true
-  }
+let config;
+
+if (process.env.NODE_ENV === 'production') {
+  config = require('../config/config.prod');
+}
+else if (process.env.NODE_ENV === 'dev') {
+  config = require('../config/config.dev');
+}
+
+const userSchema = new Schema({
+  firstName: {type: String, required: true},
+  lastName: {type: String, required: true},
+  email: {type: String, required: true, unique:true, lowercase:true},
+  password:{type: String, required: true},
+  date: {type: Date, default: Date.now}
 });
 
-// This creates our model from the above schema, using mongoose's model method
-var Product = mongoose.model("Product", ProductSchema);
+// Add name virtual attribute.
+userSchema
+  .virtual('name')
+  .get(function () {
+    return this.firstName + ' ' + this.lastName;
+});
 
-// Export the Product model
-module.exports = Product;
+// Before save, encrypt the password.
+userSchema.pre('save', function(next) {
+  const user = this;
+  if (!user.isModified('password')) return next();
+
+  // Generate a salt and then run callback.
+  bcrypt.genSalt(10, function(err, salt) {
+    if (err) { return next(err); }
+
+    // Hash the password using the salt.
+    bcrypt.hash(user.password, salt, null, function(err, hash) {
+      if (err) { return next(err); }
+
+      // Replace plain text password with encrypted password.
+      user.password = hash;
+      next();
+    });
+  });
+});
+
+userSchema.methods.comparePassword = function(candidatePassword, callback) {
+  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+    if (err) { return callback(err); }
+
+    callback(null, isMatch);
+  });
+}
+
+userSchema.methods.getUserToken = function() {
+  const timestamp = new Date().getTime();
+  return jwt.encode({ sub: this._id, iat: timestamp }, config.secret);
+}
+
+// Create the model class
+const ModelClass = mongoose.model('users', userSchema);
+
+module.exports = ModelClass;
