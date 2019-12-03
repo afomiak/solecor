@@ -1,4 +1,4 @@
-![Image description](/public/img/product-1.jpg)
+![Image description](/public/img/product-1.jpeg)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
