@@ -23,6 +23,17 @@ class NavBar extends Component {
                             products
                         </Link>
                     </li>
+                    <li className="nav-item ml-5">
+                        <Link to='/sign-in'className="nav-link">
+                            sign in
+                        </Link>
+                    </li>
+                    <li className="nav-item ml-5">
+                        <Link to='/sign-up'className="nav-link">
+                            sign up
+                        </Link>
+                    </li>
+                    
                 </ul>
                 <Link to='/cart' className='ml-auto'>
                     <ButtonContainer>
