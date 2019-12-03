@@ -9,7 +9,7 @@
     Solecor is an eCommerce website where the user can purchase their favorite pair of Jordans. The user can choose from a verity of shoes, when the user clicks on the shoe they can want,they get a full description of that shoe. From there they can place the shoe in the cart and go back to shopping or can go to cart and checkout. In the cart they are able to edit their order and use PayPal for their payment method.
 
 #   DEMO
-    https://determined-shirley-f4b8d2.netlify.com/  
+    https://affectionate-varahamihira-c2941c.netlify.com 
     
     https://github.com/aktran321/solecor.git
 
