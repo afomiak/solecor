@@ -1,4 +1,4 @@
-                                                    ### Solecor
+                                                                *Solecor*
 
 
 ![Image description](/public/img/readme.jpg)
