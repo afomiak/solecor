@@ -6,7 +6,7 @@ class SignUp extends Component {
             <div className ="container">
     <div className="row">
         <div className='col-10 mx-auto text-center text-title pt-5'>
-            <form action="/post-feedback" method="post">
+            <form action="/sign-up" method="post">
                 <h1> Sign Up Form</h1>
                 <input className="box" type="text" name="firstName" id="firstName" placeholder="First Name" required/>
                 <br></br>
@@ -23,7 +23,7 @@ class SignUp extends Component {
                 <input type="submit" id = "submitDetails"
                 name="submitDetails" value="Submit"/> <br></br>
             </form>
-            <a href="view-feedbacks">View Feedbacks</a>
+            {/* <a href="view-feedbacks">View Feedbacks</a> */}
         </div>
     </div>
 </div>
